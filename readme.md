@@ -11,3 +11,9 @@ When implementing a new feature or fixing a bug, please create a new pull reques
 ## First setup
 
 **[TODO 05/01/2018 @vanessa-cooper]:** _It's been a while since anyone ran a fresh copy of this repo. I think it's worth documenting the steps needed to install and run the repo on a new machine?_
+
+## For the first installation of Docker :
+docker-compose up : run à la source du projet pour créer les containers
+puis
+docker exec : pour effectuer des commandes sur des containers running
+
