@@ -52,8 +52,8 @@ class Item extends React.Component {
               <img
                 src={this.props.item.image}
                 onError={({ currentTarget }) => {
-                  currentTarget.onerror = null; 
-                  currentTarget.src="../../../public/placeholder.png";
+                  currentTarget.onerror = null;
+                  currentTarget.src = "../../../public/placeholder.png";
                 }}
                 alt={this.props.item.title}
                 className="item-img"
