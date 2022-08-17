@@ -4,6 +4,7 @@ import React from "react";
 import agent from "../../agent";
 import { connect } from "react-redux";
 import marked from "marked";
+
 import {
   ITEM_PAGE_LOADED,
   ITEM_PAGE_UNLOADED,
@@ -52,6 +53,10 @@ class Item extends React.Component {
               <img
                 src={this.props.item.image}
                 alt={this.props.item.title}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = process.env.PUBLIC_URL + "/placeholder.png";
+                }}
                 className="item-img"
                 style={{ height: "500px", width: "100%", borderRadius: "6px" }}
               />
