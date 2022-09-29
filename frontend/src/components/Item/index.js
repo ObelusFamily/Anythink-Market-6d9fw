@@ -1,13 +1,14 @@
-import ItemMeta from "./ItemMeta";
-import CommentContainer from "./CommentContainer";
-import React from "react";
-import agent from "../../agent";
-import { connect } from "react-redux";
 import marked from "marked";
+import React from "react";
+import { connect } from "react-redux";
+import agent from "../../agent";
 import {
   ITEM_PAGE_LOADED,
-  ITEM_PAGE_UNLOADED,
+  ITEM_PAGE_UNLOADED
 } from "../../constants/actionTypes";
+import PlaceHolder from "../../placeholder.png";
+import CommentContainer from "./CommentContainer";
+import ItemMeta from "./ItemMeta";
 
 const mapStateToProps = (state) => ({
   ...state.item,
@@ -54,6 +55,10 @@ class Item extends React.Component {
                 alt={this.props.item.title}
                 className="item-img"
                 style={{ height: "500px", width: "100%", borderRadius: "6px" }}
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = PlaceHolder;
+                }}
               />
             </div>
 
