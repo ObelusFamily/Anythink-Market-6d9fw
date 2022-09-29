@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import agent from "../../agent";
 import {
   ITEM_PAGE_LOADED,
-  ITEM_PAGE_UNLOADED
+  ITEM_PAGE_UNLOADED,
 } from "../../constants/actionTypes";
 import PlaceHolder from "../../placeholder.png";
 import CommentContainer from "./CommentContainer";
